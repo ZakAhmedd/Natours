@@ -1,7 +1,5 @@
 # Natours (Full stack)
 
-A backend service for a social media type of platform for fighters and members.
-
 ## Prerequisites
 
 Node.js - For the code
