@@ -36,12 +36,19 @@ app.use(
           'https://api.mapbox.com',
           'https://events.mapbox.com',
           'https://cdnjs.cloudflare.com',
+          'https://js.stripe.com'
         ],
         styleSrc: ["'self'", 'https:', "'unsafe-inline'"],
         connectSrc: [
           "'self'",
           'https://api.mapbox.com',
           'https://events.mapbox.com',
+          'ws://localhost:53932',
+          'https://js.stripe.com'
+        ],
+          frameSrc: [
+          "'self'",
+          'https://js.stripe.com',
         ],
         imgSrc: ["'self'", 'data:'],
         fontSrc: ["'self'", 'https:', 'data:'],
