@@ -10,16 +10,27 @@ module.exports = class Email {
     this.from = `Zak Ahm <${process.env.EMAIL_FROM}>`;
   }
   newTransport() {
-    if (process.env.NODE_ENV === 'production') {
-      // Sendgrid
-      return nodemailer.createTransport({
-        service: 'SendGrid',
-        auth: {
-          user: process.env.SENDGRID_USERNAME,
-          pass: process.env.SENDGRID_PASSWORD
-        }
-      })
-    }
+     if (process.env.NODE_ENV === 'production') {
+    // Resend
+    return nodemailer.createTransport({
+      host: 'smtp.resend.com',
+      port: 587,
+      auth: {
+        user: 'resend',
+        pass: process.env.RESEND_API_KEY
+      }
+    });
+  }
+    // if (process.env.NODE_ENV === 'production') {
+    //   // Sendgrid
+    //   return nodemailer.createTransport({
+    //     service: 'SendGrid',
+    //     auth: {
+    //       user: process.env.SENDGRID_USERNAME,
+    //       pass: process.env.SENDGRID_PASSWORD
+    //     }
+    //   })
+    // }
     return nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
