@@ -1,6 +1,7 @@
 {
   "name": "starter",
   "version": "1.0.0",
+  "packageManager": "npm@9.0.0",
   "description": "learning",
   "main": "app.js",
   "scripts": {
