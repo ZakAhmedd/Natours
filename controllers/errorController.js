@@ -9,8 +9,6 @@ const handleDuplicateFieldsDB = (err) => {
   const field = Object.keys(err.keyValue || {})[0];
   const value = err.keyValue ? err.keyValue[field] : 'unknown';
 
-  console.log(value);
-
   const message = `Duplicate field value: "${value}". Please use another value!`;
   return new AppError(message, 400);
 };
